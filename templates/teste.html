@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Jogo da Forca</h1>
+    <a href="/jogo">Iniciar Jogo</a>
+    <a href="/index2.html">aq</a>
+    
+    <h2>Adicionar Nova Palavra</h2>
+    <form id="formAdicionarPalavra">
+        <label for="palavra">Nova Palavra:</label>
+        <input type="text" id="palavra" name="palavra" required>
+        <button type="submit">Adicionar</button>
+    </form>
+    <p id="mensagem"></p>
+
+
+    <h2>Lista de Palavras</h2>
+    <button id="listarPalavrasBtn">Listar Palavras</button>
+    <ul id="listaPalavras"></ul>
+
+    <script>
+        document.getElementById('formAdicionarPalavra').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var formData = new FormData(this);
+            
+            fetch('/adicionar_palavra', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('mensagem').textContent = data.mensagem;
+                if (data.mensagem === 'Palavra adicionada com sucesso!') {
+                    this.reset();
+                }
+            })
+            .catch(error => console.error('Erro:', error));
+        });
+
+        document.getElementById('listarPalavrasBtn').addEventListener('click', function() {
+            fetch('/listar')
+            .then(response => response.json())
+            .then(data => {
+                var lista = document.getElementById('listaPalavras');
+                lista.innerHTML = '';
+                data.forEach(palavra => {
+                    var li = document.createElement('li');
+                    li.textContent = palavra;
+                    lista.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Erro:', error));
+        });
+    </script>
+</body>
+</html>

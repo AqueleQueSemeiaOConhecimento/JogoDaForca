@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.header div {
+    background-color: #293542;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.footer div {
+    background-color: #293542;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    color: #fff;
+}
+
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.container-filho {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ajusta o espaçamento entre os itens */
+    align-items: center;
+    width: 100%;
+}
+
+.filho {
+    background-color: #293542;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 40vw;
+    max-height: 15vh;
+    font-size: 3rem;
+    border-radius: 20px;
+    border: solid 4px black;
+    color: white;
+    margin: 20px 0; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#play:hover {
+    transform: scale(1.1);
+    border: #007bff solid 5px;
+}
+
+.material-symbols-outlined {
+    margin-right: 10px; 
+    font-size: inherit; 
+}
+
+.texto {
+    display: inline-block;
+}
+
+.container {
+    background-color: #d9d9d9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.personagem {
+    max-width: 3rem;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.word {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.attempts, .guessed_letters {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.mensagem {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: red !important;
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 3px 0;
+    font-size: 22px;
+    text-align: center;
+    width: 3rem;
+}
+
+button {
+    padding: 8px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.arrow {
+    margin: 2rem;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem 0rem 0.5rem 1rem ;
+    background-color: #cccccc;
+    border-radius: 100%;
+}

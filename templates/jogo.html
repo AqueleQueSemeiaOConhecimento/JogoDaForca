@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script defer src="/static/js/jquery.js"></script>
+    <script defer src="/static/js/script.js"></script>
+</head>
+<body>
+<main class="container-container">
+    <div class="container">
+        <div>
+            <a class="arrow" href="/"><svg  xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z"/></svg>
+            </a>
+        </div>
+        <p class="word">{{ palavra }}</p>
+        <img class="personagem" src="/static/img/1.png" alt="algo">
+        <p class="vidas">Vidas restantes: {{ vidas }}</p>
+        <p class="letras_adivinhadas">Letras adivinhadas: {{ letras_adivinhadas|join(', ') }}</p>
+
+        <p class="mensagem"></p>
+
+        <form id="adivinharForm">
+            <input type="text" id="letra" name="letra" maxlength="1" required>
+            <button type="submit">Adivinhar</button>
+        </form>
+        
+        <a href="/resetar">Reiniciar Jogo</a>
+    </div>
+</main>
+</body>
+</html>
