@@ -10,12 +10,18 @@
     <script defer src="/static/js/script.js"></script>
 </head>
 <body>
-<main class="container-container">
+<header class="header">
+    <div id="engenharia">
+        E N G E N H A R I A - D A - C O M P U T A Ç Ã O
+    </div>
+</header>
+<main>
     <div class="container">
         <div>
             <a class="arrow" href="/"><svg  xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#000000"><path d="M400-80 0-480l400-400 56 57-343 343 343 343-56 57Z"/></svg>
             </a>
         </div>
+        <p class="jogo">Jogo da Forca</p>
         <p class="word">{{ palavra }}</p>
         <img class="personagem" src="/static/img/1.png" alt="algo">
         <p class="vidas">Vidas restantes: {{ vidas }}</p>
@@ -28,8 +34,17 @@
             <button type="submit">Adivinhar</button>
         </form>
         
-        <a href="/resetar">Reiniciar Jogo</a>
+        <a class="blue" href="/resetar">Reiniciar Jogo</a>
     </div>
 </main>
+<footer class="footer">
+    <div>
+        &copy; Matheus
+    </div>
+</footer>
+<script>
+    let audio = new Audio ('/static/msc/msc.mp3');
+    audio.play();
+</script>
 </body>
 </html>

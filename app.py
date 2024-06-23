@@ -23,7 +23,7 @@ def jogo():
     if 'palavra' not in session:
         session['palavra'] = random.choice(palavras)
         session['adivinhadas'] = ['_'] * len(session['palavra'])
-        session['vidas'] = 6  # Número de tentativas permitidas
+        session['vidas'] = 6 
         session['letras_adivinhadas'] = []
     
     return render_template('jogo.html', 
@@ -85,7 +85,7 @@ def resetar():
     session.pop('palavra', None)
     session.pop('adivinhadas', None)
     session.pop('vidas', None)
-    session.pop('letras_adivinhadas', None)  # Limpa as letras adivinhadas
+    session.pop('letras_adivinhadas', None)
     return redirect(url_for('jogo'))
 
 @app.route('/adicionar_palavra', methods=['POST'])

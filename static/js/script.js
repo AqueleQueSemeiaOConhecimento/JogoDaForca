@@ -1,7 +1,6 @@
 /* PLAY */
 $(document).ready(function() {
     $('#play').on('click', function() {
-        console.log('clicou ze');
         $.ajax({
             url: '/jogo' ,
             method: 'GET',
@@ -13,7 +12,6 @@ $(document).ready(function() {
             }
         });
     });
-
 
     $('#adivinharForm').submit(function(event) {
         event.preventDefault();
